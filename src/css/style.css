@@ -1,0 +1,35 @@
+:root{
+    --cor-1: rgb(33, 45, 151);
+    --cor-2: rgb(95, 95, 95);
+    --bg-color:rgb(5, 4, 46);
+}
+
+
+
+.container {
+    height: 900vh;
+    display: flex;
+    background-color: var(--bg-color);
+    padding: 2.5rem 1rem;
+}
+
+.nav{
+    display: flex;
+    width: 22rem;
+}
+
+.nav .lista-projetos{
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.2rem;
+    font-family: "Play",sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.nav a{
+    color: var(--cor-2);
+}
+
