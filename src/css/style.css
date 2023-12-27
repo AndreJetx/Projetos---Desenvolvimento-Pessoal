@@ -1,35 +1,187 @@
 :root{
-    --cor-1: rgb(33, 45, 151);
+    --cor-1: rgb(70, 70, 71);
     --cor-2: rgb(95, 95, 95);
     --bg-color:rgb(5, 4, 46);
+    --bg-color-2:rgb(18, 18, 19);
 }
 
-
+body, html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 .container {
-    height: 900vh;
+    min-height: 100vh;
     display: flex;
-    background-color: var(--bg-color);
-    padding: 2.5rem 1rem;
+    background-color: var(--bg-color-2);
 }
 
-.nav{
-    display: flex;
-    width: 22rem;
+.btn{
+    padding: 0.5rem;
+    background: var(--cor-1);
+    border-radius: 10%;
+    color: white;
+    top: 1rem;
+    left: 1rem;
+    position: absolute;
+    width:auto;
+    text-align: center;
+    cursor: pointer;
+    transition: left 0.4s ease;
 }
 
-.nav .lista-projetos{
-    padding-top: 1rem;
+.btn.click{
+    left: 260px;
+}
+
+.btn span{
+    color: white;
+    font-size: 28px;
+    line-height: 45px;
+}
+
+.btn.click span:before{
+    content: '\f00d';
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav.show {
+    transform: translateX(0);
+}
+
+.nav.show .titulo{
+    visibility: hidden;
+}
+
+.nav.show .lista-projetos{
+    height: 100%;
+    width: 100%;
     font-size: 1.2rem;
     font-family: "Play",sans-serif;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-.nav a{
-    color: var(--cor-2);
+.nav.show .lista-projetos li a{
+    line-height: 2.5rem;
+    border-bottom: 0.1rem solid var(--cor-2);
+    border-left: 0.2rem solid transparent;    
 }
 
+.nav.show a{
+    color: white;
+    font-size: 1rem;
+    padding-left: 2rem;
+    display: block;
+    width: 100%;
+    
+}
+
+.nav.show a:hover{
+    color: aqua;
+    
+}
+
+.nav.show ul li.active a{
+    color: aqua   ;
+    background: var(--cor-1);
+    border-left-color: aqua;
+}
+
+
+
+iframe{
+    height: 100vh;
+}
+
+
+
+@media screen and (min-width: 1024px) {
+    .container {
+        min-height: 100vh;
+        display: flex;
+        background-color: var(--bg-color-2);
+    }
+
+    .btn {
+        display: none; /* Inicialmente, esconde o botão em telas maiores que 1024px */
+        background: none;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        color: white;
+    }
+    
+    .nav{
+        visibility: visible;
+        width: 22rem;
+        height: 100%;
+        left: 0;
+        background: var(--bg-color-2) ;
+        border-right: 0.8rem;
+        
+    }
+    
+    .nav .titulo{
+        color: white;
+        font-family: "Play", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 4rem;
+        text-align: center;
+    }
+    
+    .nav .lista-projetos{
+        height: 100%;
+        width: 100%;
+        font-size: 1.2rem;
+        font-family: "Play",sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    
+    .nav .lista-projetos li a{
+        line-height: 2.5rem;
+        border-bottom: 0.1rem solid var(--cor-2);
+        border-left: 0.2rem solid transparent;    
+    }
+    
+    .nav a{
+        color: white;
+        font-size: 1rem;
+        padding-left: 2rem;
+        display: block;
+        width: 100%;
+        
+    }
+
+    .nav a:hover{
+        color: aqua;
+        
+    }
+    
+    .nav ul li.active a{
+        color: aqua   ;
+        background: var(--cor-1);
+        border-left-color: aqua;
+    }
+    
+    .container iframe{
+        padding: 2rem 0.5rem;
+    }
+    
+}
