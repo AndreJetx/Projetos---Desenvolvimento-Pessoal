@@ -47,3 +47,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function mostrarDescricao(descricao) {
+    // Atualizar o conteúdo do parágrafo com a descrição do projeto clicado
+    document.getElementById('descricao-projeto').innerText = descricao;
+}

@@ -1,0 +1,35 @@
+body{
+    height: 100vh;
+    display: flex;
+    font-family: "Play", sans-serif;
+    background-color: rgb(95, 95, 95);
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: auto;
+    text-align: center;
+    gap: 4rem;
+}
+
+div h2{
+    color: aqua;
+    font-size: 4rem;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.507);
+}
+
+div p{
+    font-size: 2rem ;
+}
+
+div p:last-child{
+    font-size: 2rem ;
+    text-shadow: 0 0 5px aqua;
+}
+
+
