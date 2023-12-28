@@ -1,0 +1,115 @@
+:root{
+/*Primary*/
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+
+/*Neutral*/
+
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-family: "manrope";
+    font-weight: 700;
+    background: var(--Dark-Blue);
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 30rem;
+    margin: 0.5rem;
+    background-color: var(--Dark-Grayish-Blue);
+    border-radius: 5%;
+}
+
+.container .n-conselho{
+    color: var(--Neon-Green);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.5rem;
+}
+
+.container p{
+    color: var(--Light-Cyan);
+}
+
+.line{
+    margin-bottom: 5rem;
+}
+
+.icon{
+    width: 2rem;
+}
+
+.container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--Neon-Green);
+    border: none;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.container button:hover{
+    box-shadow: 0 0px 15px var(--Neon-Green);
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+    .container{
+        width: 30rem ;
+        border-radius: 2%;
+    }
+
+    .container .n-conselho{
+        font-size: 0.7rem;
+    }
+
+    .container p{
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    .container button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--Neon-Green);
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+
+    .icon{
+        width: 1rem;
+    }
+
+    .line{
+        margin-bottom: 2.5rem;
+    }
+}
+
+
