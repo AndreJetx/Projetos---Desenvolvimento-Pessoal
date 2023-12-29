@@ -60,6 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             descricaoParagrafo.textContent = descricaoConteudo;
 
+            const iframe = document.querySelector('iframe[name="projetoFrame"]');
+            iframe.src = event.target.href;
+
             descricaoParagrafo.style.display = descricaoConteudo ? "block" : "none";
         });
     });
