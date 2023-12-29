@@ -48,7 +48,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-function mostrarDescricao(descricao) {
-    // Atualizar o conteúdo do parágrafo com a descrição do projeto clicado
-    document.getElementById('descricao-projeto').innerText = descricao;
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const listaProjetos = document.querySelectorAll(".lista-projetos li");
+
+    listaProjetos.forEach(function (projeto) {
+        projeto.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const descricaoConteudo = projeto.querySelector("p#mostrar").textContent;
+            const descricaoParagrafo = document.querySelector("p#descricao");
+
+            descricaoParagrafo.textContent = descricaoConteudo;
+
+            descricaoParagrafo.style.display = descricaoConteudo ? "block" : "none";
+        });
+    });
+});
