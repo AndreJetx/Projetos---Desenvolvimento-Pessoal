@@ -29,6 +29,7 @@ body{
 
 .video-destaque{
     grid-area: video-destaque;
+    border: 2px solid aqua;
 }
 
 
@@ -52,11 +53,13 @@ body{
 
 .propaganda{
     grid-area: propaganda;
+    border: 2px solid aqua;
 }
 
 
 .side-video{
     grid-area: side-video ;
+    border: 2px solid aqua;
 }
 .side-video .video{
     display: flex;
