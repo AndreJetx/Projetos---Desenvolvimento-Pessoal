@@ -1,43 +1,39 @@
-var listaItems = document.querySelectorAll('nav ul li');
-
-listaItems.forEach(function(item) {
-    item.addEventListener('click', function() {
-        item.classList.add('active');
-
-
-        var siblings = getSiblings(item);
-        siblings.forEach(function(sibling) {
-            sibling.classList.remove('active');
-        });
-    });
-});
-
 function getSiblings(elem) {
-    var siblings = [];
-    var sibling = elem.parentNode.firstChild;
-
+    let siblings = [];
+    let sibling = elem.parentNode.firstChild;
+    
     while (sibling) {
         if (sibling.nodeType === 1 && sibling !== elem) {
             siblings.push(sibling);
         }
         sibling = sibling.nextSibling;
     }
-
     return siblings;
 }
 
+const listaItems = document.querySelectorAll('nav ul li');
+listaItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+        item.classList.add('active');
+        const siblings = getSiblings(item);
+        siblings.forEach(function(sibling) {
+            sibling.classList.remove('active');
+        });
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.querySelector('.btn');
-    var nav = document.querySelector('.nav');
+    const btn = document.querySelector('.btn');
+    const nav = document.querySelector('.nav');
 
     btn.addEventListener('click', function() {
         nav.classList.toggle('show');
     });
 
-    var listItems = nav.querySelectorAll('.lista-projetos li a');
+    const listItems = nav.querySelectorAll('.lista-projetos li a');
     listItems.forEach(function(item) {
         item.addEventListener('click', function() {
-            nav.classList.remove('show');o
+            nav.classList.remove('show');
         });
     });
 
@@ -62,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const iframe = document.querySelector('iframe[name="projetoFrame"]');
             iframe.src = event.target.href;
-
+            
             descricaoParagrafo.style.display = descricaoConteudo ? "block" : "none";
         });
     });
