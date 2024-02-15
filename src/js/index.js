@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
         projeto.addEventListener("click", function (event) {
             event.preventDefault();
 
-            const descricaoConteudo = projeto.querySelector("p#mostrar").textContent;
+            const descricaoConteudo = projeto.querySelector("p#mostrar").innerHTML;
             const descricaoParagrafo = document.querySelector("p#descricao");
 
-            descricaoParagrafo.textContent = descricaoConteudo;
+            descricaoParagrafo.innerHTML = descricaoConteudo;
 
             const iframe = document.querySelector('iframe[name="projetoFrame"]');
             iframe.src = event.target.href;
